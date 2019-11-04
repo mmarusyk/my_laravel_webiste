@@ -17,7 +17,7 @@
             <thead>
                 <th>Назва</th>
                 <th>Публікація</th>
-                <th class="text-right">Дія</th>
+                <th class="text-center">Дія</th>
             </thead>
             <tbody>
             @forelse($pages as $page)
@@ -25,7 +25,7 @@
                     <td>{{$page->title}}</td>
                     <td>{{$page->published}}</td>
                     <td>
-                        <a href="{{route('admin.page.edit', ['id'=>$page->id])}}"></a>
+                        <a href="{{route('admin.page.edit', ['id'=>$page->id])}}">Редагувати</a>
                     </td>
                 </tr>
             @empty

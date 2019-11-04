@@ -18,7 +18,7 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <a class="btn btn-block btn-default" href="#">Створити сторінку</a>
+                <a class="btn btn-block btn-default" href="{{route('admin.page.create')}}">Створити сторінку</a>
                 <a class="list-group-item" href="#">
                     <h4 class="list-group-item-heading">Сторінка перша</h4>
                     <p class="list-group-item-text">
