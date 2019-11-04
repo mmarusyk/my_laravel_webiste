@@ -24,8 +24,15 @@
                 <tr>
                     <td>{{$page->title}}</td>
                     <td>{{$page->published}}</td>
-                    <td>
-                        <a href="{{route('admin.page.edit', ['id'=>$page->id])}}">Редагувати</a>
+                    <td class="text-center">
+                        <form onsubmit="if(confirm('Видалити?')){return true} else{return false}" action="{{route('admin.page.destroy', $page)}}" method="post">
+
+                            @method('DELETE')
+                            @csrf
+
+                            <a class="btn btn-info" href="{{route('admin.page.edit', $page)}}">Редагувати</a>
+                            <button type="submit" class="btn btn-danger">Видалити</button>
+                        </form>
                     </td>
                 </tr>
             @empty

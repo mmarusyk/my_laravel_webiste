@@ -1,8 +1,8 @@
 <label for="">Статус</label>
 <select class="form-control" name="published">
     @if(isset($page->id))
-        <option value="0" @if ($page-published == 0) selected="" @endif>Не опублікована</option>
-        <option value="1" @if ($page-published == 1) selected="" @endif>Опублікована</option>
+        <option value="0" @if ($page->published == 0) selected="" @endif>Не опублікована</option>
+        <option value="1" @if ($page->published == 1) selected="" @endif>Опублікована</option>
     @else
         <option value="0">Не опублікована</option>
         <option value="1">Опублікована</option>
@@ -15,7 +15,7 @@
        value="{{$page->title ?? ""}}" required>
 <label for="">Батьківська сторінка</label>
 
-<input class="form-control" type="text" name="slug" placeholder="Генерація slug" value="{{ $category->slug ?? '' }}" readonly="" hidden>
+<input class="form-control" type="text" name="slug" placeholder="Генерація slug" value="{{ $page->slug ?? '' }}" readonly="" hidden>
 
 <select class="form-control" name="parent_id">
     <option value="0"> Без батьківської сторінки</option>

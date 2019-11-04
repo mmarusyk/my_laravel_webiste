@@ -66,7 +66,11 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+        return view('admin.pages.edit', [
+            'page'=> $page,
+            'pages'=>Page::with('children')->where('parent_id','0')->get(),
+            'delimiter'=> ''
+        ]);
     }
 
     /**
@@ -78,7 +82,8 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        $page->update($request->except('slug'));
+        return redirect()->route('admin.page.index');
     }
 
     /**
@@ -89,6 +94,8 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
-        //
+        $page->delete();
+
+        return redirect()->route('admin.page.index');
     }
 }

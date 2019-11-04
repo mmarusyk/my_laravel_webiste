@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="{{asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -38,7 +39,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Сайт</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{route('admin.page.index')}}">Сторінки</a></li>
-                            <li><a href="#">Записи</a></li>
+                            <li><a href="{{route('admin.article.index')}}">Записи</a></li>
                         </ul>
                     </li>
                 </ul>
