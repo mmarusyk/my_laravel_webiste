@@ -37,7 +37,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Сайт</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Сторінки</a></li>
+                            <li><a href="{{route('admin.page.index')}}">Сторінки</a></li>
                             <li><a href="#">Записи</a></li>
                         </ul>
                     </li>
