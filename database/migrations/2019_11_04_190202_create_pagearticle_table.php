@@ -16,7 +16,7 @@ class CreatePagearticleTable extends Migration
         Schema::create('pagearticles', function (Blueprint $table) {
             $table->integer('page_id');
             $table->integer('pagearticle_id');
-            $table->integer('pagearticle_type');
+            $table->string('pagearticle_type');
         });
     }
 

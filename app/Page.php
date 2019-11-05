@@ -16,4 +16,12 @@ class Page extends Model
     public function children() {
         return $this->hasMany(self::class, 'parent_id');
     }
+
+    public function articles(){
+        return $this->morphedByMany('App\Article','pagearticle');
+    }
+
+    public function scopeLastPages($query, $count) {
+        return $query->orderBy('created_at', 'desc')->take($count)->get();
+    }
 }
