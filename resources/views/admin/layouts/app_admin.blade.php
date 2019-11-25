@@ -43,6 +43,8 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{route('admin.page.index')}}">Сторінки</a></li>
                             <li><a href="{{route('admin.article.index')}}">Записи</a></li>
+                            <li><a href="{{route('admin.professor.index')}}">Викладачі</a></li>
+                            <li><a href="{{route('admin.discipline.index')}}">Дисципліни</a></li>
                         </ul>
                     </li>
                 </ul>
