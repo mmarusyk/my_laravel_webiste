@@ -18,17 +18,25 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('page');
 
 Route::get('/site/page/{slug?}', 'SiteController@page')->name('page');
 Route::get('/site/article/{slug?}', 'SiteController@article')->name('article');
 Route::get('/site/professors', 'SiteController@professors')->name('professors');
 Route::get('/site/professors/{id}', 'SiteController@professor')->name('professor');
 
-Route::group(['prefix'=>'admin', 'namespace'=>'Admin','middleware'=>['auth']], function (){
-    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
-    Route::resource('/page','PageController', ['as'=>'admin']);
-    Route::resource('/article','ArticleController', ['as'=>'admin']);
-    Route::resource('/discipline','DisciplineController', ['as'=>'admin']);
-    Route::resource('/professor','ProfessorController', ['as'=>'admin']);
+//Route::group(['prefix'=>'admin', 'namespace'=>'Admin','middleware'=>['auth']], function (){
+//    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+//    Route::resource('/page','PageController', ['as'=>'admin']);
+//    Route::resource('/article','ArticleController', ['as'=>'admin']);
+//    Route::resource('/discipline','DisciplineController', ['as'=>'admin']);
+//    Route::resource('/professor','ProfessorController', ['as'=>'admin']);
+//});
+Route::group(['middleware' => 'is.admin'], function () {
+    Route::get('admin', 'Admin\DashboardController@dashboard')->name('admin.index');
+    Route::resource('/page','Admin\PageController', ['as'=>'admin']);
+    Route::resource('/article','Admin\ArticleController', ['as'=>'admin']);
+    Route::resource('/discipline','Admin\DisciplineController', ['as'=>'admin']);
+    Route::resource('/professor','Admin\ProfessorController', ['as'=>'admin']);
 });
 
