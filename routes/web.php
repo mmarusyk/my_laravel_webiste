@@ -24,6 +24,9 @@ Route::get('/site/page/{slug?}', 'SiteController@page')->name('page');
 Route::get('/site/article/{slug?}', 'SiteController@article')->name('article');
 Route::get('/site/professors', 'SiteController@professors')->name('professors');
 Route::get('/site/professors/{id}', 'SiteController@professor')->name('professor');
+Route::get('/site/disciplines', 'SiteController@disciplines')->name('disciplines');
+Route::get('/site/disciplines/{id}', 'SiteController@discipline')->name('discipline');
+
 
 //Route::group(['prefix'=>'admin', 'namespace'=>'Admin','middleware'=>['auth']], function (){
 //    Route::get('/', 'DashboardController@dashboard')->name('admin.index');

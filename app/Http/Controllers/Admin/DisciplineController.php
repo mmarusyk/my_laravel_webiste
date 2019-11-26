@@ -27,7 +27,7 @@ class DisciplineController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.disciplines.create');
     }
 
     /**
@@ -38,7 +38,9 @@ class DisciplineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Disciplines::create($request->all());
+
+        return redirect()->route('admin.discipline.index');
     }
 
     /**
@@ -58,9 +60,9 @@ class DisciplineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Disciplines $discipline)
     {
-        //
+        return view('admin.disciplines.edit', compact('discipline'));
     }
 
     /**
@@ -70,9 +72,10 @@ class DisciplineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Disciplines $discipline)
     {
-        //
+        $discipline->update($request->all());
+        return redirect()->route('admin.discipline.index');
     }
 
     /**
@@ -81,8 +84,9 @@ class DisciplineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Disciplines $discipline)
     {
-        //
+        $discipline->delete();
+        return redirect()->route('admin.discipline.index');
     }
 }

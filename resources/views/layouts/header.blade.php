@@ -12,6 +12,7 @@
             <ul class="navbar-nav mr-auto">
                 @include('layouts.top_menu', ['pages'=>$pages])
                 <li><a href="{{url("/site/professors")}}">Викладачі</a></li>
+                <li><a href="{{url("/site/disciplines")}}">Дисципліни</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

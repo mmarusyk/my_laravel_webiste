@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Disciplines;
 use App\Page;
 use App\Article;
 use App\Professors;
@@ -30,6 +31,16 @@ class SiteController extends Controller
     public function professor($id) {
         return view('site.professor', [
             'professor'=> Professors::where('id', $id)->first()
+        ]);
+    }
+    public function disciplines() {
+        return view('site.disciplines', [
+            'disciplines'=> Disciplines::paginate(20)
+        ]);
+    }
+    public function discipline($id) {
+        return view('site.discipline', [
+            'discipline'=> Disciplines::where('id', $id)->first()
         ]);
     }
 }
