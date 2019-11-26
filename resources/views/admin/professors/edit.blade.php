@@ -8,7 +8,7 @@
         @endcomponent
 
         <hr>
-        <form action="{{ route('admin.professor.update', $professor) }}" method="post">
+        <form action="{{ route('admin.professor.update', $professor) }}" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="put">
             {{csrf_field()}}
 

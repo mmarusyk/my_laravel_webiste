@@ -8,11 +8,15 @@ class Professors extends Model
 {
     protected $fillable = [
         'name',
+        'position',
+        'academic_status',
+        'scientific_degree',
+        'published',
         'description_short',
         'description',
-        'course',
-        'semester',
-        'lecturer',
-        'published'
+        'image'
     ];
+
+
+
 }

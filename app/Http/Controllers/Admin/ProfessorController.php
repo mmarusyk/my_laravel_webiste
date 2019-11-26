@@ -38,9 +38,25 @@ class ProfessorController extends Controller
      */
     public function store(Request $request)
     {
-        Professors::create($request->all());
+        $image = $request->file('image');
+        $new_name = rand().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
 
+        $form_data = array(
+            'name' =>$request->name,
+            'position' =>$request->position,
+            'academic_status'=>$request->academic_status,
+            'scientific_degree'=>$request->scientific_degree,
+            'description_short'=>$request->description_short,
+            'description'=>$request->description,
+            'image'=>$new_name,
+            'image_show'=>$request->image_show,
+            'published'=>$request->published
+        );
+        Professors::create($form_data);
         return redirect()->route('admin.professor.index');
+//        Professors::create($request->all());
+//        return redirect()->route('admin.professor.index');
     }
 
     /**
@@ -75,6 +91,7 @@ class ProfessorController extends Controller
     public function update(Request $request, Professors $professor)
     {
         $professor->update($request->all());
+
         return redirect()->route('admin.professor.index');
     }
 

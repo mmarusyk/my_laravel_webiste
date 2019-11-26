@@ -16,11 +16,11 @@ class CreateProfessorsTable extends Migration
         Schema::create('professors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->text('position');
+            $table->text('academic_status');
+            $table->text('scientific_degree');
             $table->text('description_short')->nullable();
             $table->text('description');
-            $table->text('position')->nullable();
-            $table->text('academic_status')->nullable();
-            $table->text('scientific_degree')->nullable();
             $table->string('image')->nullable();
             $table->boolean('image_show')->nullable();
             $table->boolean('published');

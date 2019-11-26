@@ -14,20 +14,26 @@
 <input type="text" class="form-control" name="name" placeholder="Повне імя викладача"
        value="{{$professor->name ?? ""}}" required>
 
+<label for=""></label>
 <input type="text" class="form-control" name="position" placeholder="Посада"
        value="{{$professor->position ?? ""}}" >
 
+<label for=""></label>
 <input type="text" class="form-control" name="academic_status" placeholder="Вчене звання"
        value="{{$professor->academic_status ?? ""}}" >
 
+<label for=""></label>
 <input type="text" class="form-control" name="scientific_degree" placeholder="Науковий ступінь"
        value="{{$professor->scientific_degree ?? ""}}" >
-
 
 <label for="">Короткий опис</label>
 <textarea class="form-control" id="description_short" name="description_short">{{$professor->description_short ?? ""}}</textarea>
 
 <label for="">Повний запис</label>
 <textarea class="form-control" id="description" name="description">{{$professor->description ?? ""}}</textarea>
+
+
+<input type="file" class="form-control" name="image"/>
+
 
 <input class="btn btn-primary" type="submit" value="Зберегти">

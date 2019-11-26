@@ -16,11 +16,11 @@ class CreateDisciplinesTable extends Migration
         Schema::create('disciplines', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('description_short')->nullable();
-            $table->text('description');
             $table->string('course')->nullable();
             $table->string('semester')->nullable();
             $table->string('lecturer')->nullable();
+            $table->text('description_short')->nullable();
+            $table->text('description');
             $table->boolean('published');
             $table->timestamps();
         });

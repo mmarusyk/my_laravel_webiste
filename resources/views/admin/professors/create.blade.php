@@ -8,7 +8,7 @@
         @endcomponent
 
         <hr>
-        <form action="{{ route('admin.professor.store') }}" method="post">
+        <form action="{{ route('admin.professor.store') }}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
 
             @include('admin.professors.partials._form')

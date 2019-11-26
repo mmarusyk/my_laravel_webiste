@@ -5,6 +5,7 @@
         @forelse($professors as $professor)
             <div class="row">
                 <div class="col-sm-12">
+                    <img src="{{URL::to('/')}}/images/{{$professor->image}}" class="img-thumbnail" width="200"/>
                     <h2><a href="{{route('professor', $professor->id)}}">{{$professor->name}}</a></h2>
                     <p>{!! $professor->description_short !!}</p>
                 </div>
