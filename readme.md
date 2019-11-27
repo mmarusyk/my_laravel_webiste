@@ -63,3 +63,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+##About Website (Про веб-сайт)
+
+Website for University with use Laravel 5.7.
+
+##Install (Встановлення)
+
+1. Клонування репозиторію
+    git clone https://github.com/mmarusyk/my_laravel_webiste.git
+
+3. Встановлення необхідних компонентів
+    composer install 
+    npm install
+    php artisan migrate
+    php artisan db:seed
+    php artisan key:generate
+    php artisan serve 
+
+4. При використанні Vagrant можна завантажити Homesteat   
