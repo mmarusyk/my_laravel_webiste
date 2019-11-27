@@ -5,9 +5,10 @@
         <div class="row">
             <div class="col-sm-12">
                 <h1>{{$discipline->name}}</h1>
-                <p>{{$discipline->course}}</p>
-                <p>{{$discipline->semester}}</p>
-                <p>{{$discipline->lecturer}}</p>
+                <p>Курс: {{$discipline->course}}</p>
+                <p>Семестр: {{$discipline->semester}}</p>
+                <p>Лектор: {{$discipline->lecturer}}</p>
+                <p>Опис</p>
                 <p>{!! $discipline->description !!}</p>
             </div>
         </div>

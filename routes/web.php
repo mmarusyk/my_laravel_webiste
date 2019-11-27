@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('site.home');
+    return view('site.main');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index')->name('page');
+Route::get('/', 'HomeController@main')->name('main');
 
 Route::get('/site/page/{slug?}', 'SiteController@page')->name('page');
 Route::get('/site/article/{slug?}', 'SiteController@article')->name('article');

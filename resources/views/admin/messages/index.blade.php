@@ -18,6 +18,7 @@
             <th>Прізвище</th>
             <th>Email</th>
             <th>Повідомлення</th>
+            <th>Дата створення</th>
             <th class="text-center">Дія</th>
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                     <td>{{$message->second_name}}</td>
                     <td>{{$message->email}}</td>
                     <td>{{$message->message}}</td>
+                    <td>{{$message->created_at}}</td>
                     <td class="text-center">
                         <form onsubmit="if(confirm('Видалити?')){return true} else{return false}" action="{{route('admin.message.destroy', $message)}}" method="post">
 
