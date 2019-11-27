@@ -24,7 +24,8 @@
 </head>
 <body>
 <div id="app">
-    <header class="container">
+    <div id="page-container">
+        <div id="content-wrap">
         <header class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="{{url('/')}}">ІПЗ</a>
@@ -88,12 +89,12 @@
         </header>
 
 
-    </header>
-
-
     <main class="py-4">
         @yield('content')
     </main>
+        </div>
+    @include('layouts.footer')
+        </div>
 </div>
 </body>
 </html>

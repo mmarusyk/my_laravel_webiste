@@ -25,15 +25,17 @@
 </head>
 <body>
 <div id="app">
+    <div id="page-container">
+        <div id="content-wrap">
     @include('layouts.header')
 
     <main class="py-4">
         @yield('content')
     </main>
+        </div>
 
+    @include('layouts.footer')
 </div>
-
-
-
+</div>
 </body>
 </html>
