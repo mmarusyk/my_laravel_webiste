@@ -16,7 +16,9 @@ class Professors extends Model
         'description',
         'image'
     ];
-
+    public function scopeLastProfessors($query, $count) {
+        return $query->orderBy('created_at', 'desc')->take($count)->get();
+    }
 
 
 }

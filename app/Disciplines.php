@@ -14,4 +14,7 @@ class Disciplines extends Model
         'description',
         'published'
     ];
+    public function scopeLastDisciplines($query, $count) {
+        return $query->orderBy('created_at', 'desc')->take($count)->get();
+    }
 }
