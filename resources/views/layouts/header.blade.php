@@ -10,9 +10,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                @include('layouts.top_menu', ['pages'=>$pages])
+
                 <li><a href="{{url("/site/professors")}}">Викладачі</a></li>
                 <li><a href="{{url("/site/disciplines")}}">Дисципліни</a></li>
+                @include('layouts.top_menu', ['pages'=>$pages])
+                <li><a href="{{url("site/about")}}">Про кафедру</a></li>
+                <li><a href="#">Контакти</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

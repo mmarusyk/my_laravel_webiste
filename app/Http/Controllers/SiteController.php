@@ -43,4 +43,5 @@ class SiteController extends Controller
             'discipline'=> Disciplines::where('id', $id)->first()
         ]);
     }
+
 }
