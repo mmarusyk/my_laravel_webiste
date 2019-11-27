@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{url("site/about")}}">Кафедра</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Контакти</a>
+                    <a class="nav-link" href="{{url("site/contact-us")}}">Контакти</a>
                 </li>
                 @guest
                     <li class="nav-item">

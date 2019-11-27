@@ -51,6 +51,9 @@
                                 <li class="nav-item"><a class="nav-link" href="{{route('admin.discipline.index')}}">Дисципліни</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.message.index')}}">Повідомлення</a>
+                        </li>
 
                     </ul>
                     <ul class="navbar-nav ml-auto">

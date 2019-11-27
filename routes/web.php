@@ -29,6 +29,8 @@ Route::get('/site/disciplines/{id}', 'SiteController@discipline')->name('discipl
 Route::get('/site/about', function () {
     return view('site.about');
 });
+Route::get('/site/contact-us', 'ContactUsController@contactUs');
+Route::post('site/contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@contactSaveData']);
 
 //Route::group(['prefix'=>'admin', 'namespace'=>'Admin','middleware'=>['auth']], function (){
 //    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
@@ -43,5 +45,6 @@ Route::group(['middleware' => 'is.admin'], function () {
     Route::resource('/article','Admin\ArticleController', ['as'=>'admin']);
     Route::resource('/discipline','Admin\DisciplineController', ['as'=>'admin']);
     Route::resource('/professor','Admin\ProfessorController', ['as'=>'admin']);
+    Route::resource('/message','ContactUsController',['as'=>'admin']);
 });
 
