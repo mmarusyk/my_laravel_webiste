@@ -25,5 +25,11 @@
         @empty
             <h2 class="text-center">Відсутні записи</h2>
         @endforelse
+
+        <div>
+            <ul class="pagination">
+                {{$professors->links()}}
+            </ul>
+        </div>
     </div>
 @endsection

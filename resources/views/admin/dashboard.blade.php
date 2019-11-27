@@ -1,8 +1,9 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
-    <h1>Адмін Панель</h1>
     <div class="container">
+        <h1>Адмін Панель</h1>
+        <hr>
         <div class="row">
             <div class="col-sm-6">
                 <div>
@@ -41,6 +42,7 @@
                 @endforeach
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-sm-6">
                 <div>

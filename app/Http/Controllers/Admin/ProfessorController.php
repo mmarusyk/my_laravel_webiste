@@ -90,8 +90,26 @@ class ProfessorController extends Controller
      */
     public function update(Request $request, Professors $professor)
     {
-        $professor->update($request->all());
+//        $professor->update($request->all());
+//
+//        return redirect()->route('admin.professor.index');
 
+        $image = $request->file('image');
+        $new_name = rand().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+
+        $form_data = array(
+            'name' =>$request->name,
+            'position' =>$request->position,
+            'academic_status'=>$request->academic_status,
+            'scientific_degree'=>$request->scientific_degree,
+            'description_short'=>$request->description_short,
+            'description'=>$request->description,
+            'image'=>$new_name,
+            'image_show'=>$request->image_show,
+            'published'=>$request->published
+        );
+        $professor->update($form_data);
         return redirect()->route('admin.professor.index');
     }
 

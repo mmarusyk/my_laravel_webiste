@@ -55,6 +55,10 @@
                             <a class="nav-link" href="{{route('admin.message.index')}}">Повідомлення</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Користувачі</a>
+                        </li>
+
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
